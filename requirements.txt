@@ -1,0 +1,15 @@
+# Minimal requirements for analyze_sample.py
+
+# Code parsing
+tree-sitter>=0.21.3
+tree-sitter-java>=0.21.0
+tree-sitter-python>=0.23.0
+tree-sitter-typescript>=0.21.0
+
+# Terminal UI
+rich>=13.7.0
+tqdm>=4.66.1
+
+# Data handling
+pydantic>=2.5.3
+pathspec>=0.12.1

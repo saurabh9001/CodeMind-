@@ -1,0 +1,829 @@
+{
+  "summary": {
+    "total_methods_analyzed": 47,
+    "total_method_calls": 37,
+    "total_classes": 6,
+    "classes_with_dependencies": 6,
+    "external_api_calls": 0,
+    "database_operations": 5,
+    "scheduled_tasks": 0,
+    "spring_components": 6,
+    "error_handlers": 0,
+    "config_users": 0,
+    "method_complexity_analyzed": 32,
+    "high_risk_methods": 0,
+    "database_tables_mapped": 3,
+    "api_endpoints_mapped": 0,
+    "domain_clusters": 1
+  },
+  "method_call_graph": {
+    "EntityMappingType.getId": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMappingType.setId": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMappingType.getUuid": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMappingType.setUuid": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMappingType.getName": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMappingType.setName": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMappingType.getEntity1Type": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMappingType.setEntity1Type": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMappingType.getEntity2Type": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMappingType.setEntity2Type": {
+      "calls": [],
+      "called_by": []
+    },
+    "LocationEncounterTypeMap.getId": {
+      "calls": [],
+      "called_by": []
+    },
+    "LocationEncounterTypeMap.setId": {
+      "calls": [],
+      "called_by": []
+    },
+    "LocationEncounterTypeMap.getEncounterType": {
+      "calls": [],
+      "called_by": []
+    },
+    "LocationEncounterTypeMap.setEncounterType": {
+      "calls": [],
+      "called_by": []
+    },
+    "LocationEncounterTypeMap.getLocation": {
+      "calls": [],
+      "called_by": []
+    },
+    "LocationEncounterTypeMap.setLocation": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMapping.getId": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMapping.setId": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMapping.getUuid": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMapping.setUuid": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMapping.getEntity1Uuid": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMapping.setEntity1Uuid": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMapping.getEntity2Uuid": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMapping.setEntity2Uuid": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMapping.getEntityMappingType": {
+      "calls": [],
+      "called_by": []
+    },
+    "EntityMapping.setEntityMappingType": {
+      "calls": [],
+      "called_by": []
+    },
+    "BahmniLocationServiceImpl.getEncounterTypes": {
+      "calls": [
+        {
+          "target": "StringUtils.isBlank",
+          "object": "StringUtils",
+          "method": "isBlank",
+          "type": "instance_call"
+        },
+        {
+          "target": "locationEncounterTypeMapDao.getEncounterTypes",
+          "object": "locationEncounterTypeMapDao",
+          "method": "getEncounterTypes",
+          "type": "instance_call"
+        },
+        {
+          "target": "StringUtils.isBlank",
+          "class": "StringUtils",
+          "method": "isBlank",
+          "type": "static_call"
+        },
+        {
+          "target": "EncounterTypeMapDao.getEncounterTypes",
+          "class": "EncounterTypeMapDao",
+          "method": "getEncounterTypes",
+          "type": "static_call"
+        }
+      ],
+      "called_by": []
+    },
+    "StringUtils.isBlank": {
+      "calls": [],
+      "called_by": [
+        "BahmniLocationServiceImpl.getEncounterTypes",
+        "BahmniLocationServiceImpl.getEncounterTypes"
+      ]
+    },
+    "locationEncounterTypeMapDao.getEncounterTypes": {
+      "calls": [],
+      "called_by": [
+        "BahmniLocationServiceImpl.getEncounterTypes"
+      ]
+    },
+    "EncounterTypeMapDao.getEncounterTypes": {
+      "calls": [],
+      "called_by": [
+        "BahmniLocationServiceImpl.getEncounterTypes"
+      ]
+    },
+    "BahmniLocationServiceImpl.getEncounterType": {
+      "calls": [
+        {
+          "target": "encounterTypes.size",
+          "object": "encounterTypes",
+          "method": "size",
+          "type": "instance_call"
+        },
+        {
+          "target": "encounterTypes.get",
+          "object": "encounterTypes",
+          "method": "get",
+          "type": "instance_call"
+        },
+        {
+          "target": "encounterTypes.size",
+          "object": "encounterTypes",
+          "method": "size",
+          "type": "instance_call"
+        },
+        {
+          "target": "Types.size",
+          "class": "Types",
+          "method": "size",
+          "type": "static_call"
+        },
+        {
+          "target": "Types.get",
+          "class": "Types",
+          "method": "get",
+          "type": "static_call"
+        },
+        {
+          "target": "Types.size",
+          "class": "Types",
+          "method": "size",
+          "type": "static_call"
+        }
+      ],
+      "called_by": []
+    },
+    "encounterTypes.size": {
+      "calls": [],
+      "called_by": [
+        "BahmniLocationServiceImpl.getEncounterType",
+        "BahmniLocationServiceImpl.getEncounterType"
+      ]
+    },
+    "encounterTypes.get": {
+      "calls": [],
+      "called_by": [
+        "BahmniLocationServiceImpl.getEncounterType"
+      ]
+    },
+    "Types.size": {
+      "calls": [],
+      "called_by": [
+        "BahmniLocationServiceImpl.getEncounterType",
+        "BahmniLocationServiceImpl.getEncounterType"
+      ]
+    },
+    "Types.get": {
+      "calls": [],
+      "called_by": [
+        "BahmniLocationServiceImpl.getEncounterType"
+      ]
+    },
+    "LocationEncounterTypeMapDaoImpl.getEncounterTypes": {
+      "calls": [
+        {
+          "target": "sessionFactory.getCurrentSession",
+          "object": "sessionFactory",
+          "method": "getCurrentSession",
+          "type": "instance_call"
+        },
+        {
+          "target": "currentSession.createQuery",
+          "object": "currentSession",
+          "method": "createQuery",
+          "type": "instance_call"
+        },
+        {
+          "target": "query.setParameter",
+          "object": "query",
+          "method": "setParameter",
+          "type": "instance_call"
+        },
+        {
+          "target": "query.list",
+          "object": "query",
+          "method": "list",
+          "type": "instance_call"
+        },
+        {
+          "target": "Factory.getCurrentSession",
+          "class": "Factory",
+          "method": "getCurrentSession",
+          "type": "static_call"
+        },
+        {
+          "target": "Session.createQuery",
+          "class": "Session",
+          "method": "createQuery",
+          "type": "static_call"
+        }
+      ],
+      "called_by": []
+    },
+    "sessionFactory.getCurrentSession": {
+      "calls": [],
+      "called_by": [
+        "LocationEncounterTypeMapDaoImpl.getEncounterTypes",
+        "EntityMappingDaoImpl.getMappingsOfEntity",
+        "EntityMappingDaoImpl.getAllEntityMappings",
+        "EntityMappingDaoImpl.getEntityMappingTypeByName"
+      ]
+    },
+    "currentSession.createQuery": {
+      "calls": [],
+      "called_by": [
+        "LocationEncounterTypeMapDaoImpl.getEncounterTypes",
+        "EntityMappingDaoImpl.getMappingsOfEntity",
+        "EntityMappingDaoImpl.getAllEntityMappings",
+        "EntityMappingDaoImpl.getEntityMappingTypeByName"
+      ]
+    },
+    "query.setParameter": {
+      "calls": [],
+      "called_by": [
+        "LocationEncounterTypeMapDaoImpl.getEncounterTypes",
+        "EntityMappingDaoImpl.getMappingsOfEntity",
+        "EntityMappingDaoImpl.getMappingsOfEntity",
+        "EntityMappingDaoImpl.getAllEntityMappings",
+        "EntityMappingDaoImpl.getEntityMappingTypeByName"
+      ]
+    },
+    "query.list": {
+      "calls": [],
+      "called_by": [
+        "LocationEncounterTypeMapDaoImpl.getEncounterTypes",
+        "EntityMappingDaoImpl.getMappingsOfEntity",
+        "EntityMappingDaoImpl.getAllEntityMappings",
+        "EntityMappingDaoImpl.getEntityMappingTypeByName"
+      ]
+    },
+    "Factory.getCurrentSession": {
+      "calls": [],
+      "called_by": [
+        "LocationEncounterTypeMapDaoImpl.getEncounterTypes",
+        "EntityMappingDaoImpl.getMappingsOfEntity",
+        "EntityMappingDaoImpl.getAllEntityMappings",
+        "EntityMappingDaoImpl.getEntityMappingTypeByName"
+      ]
+    },
+    "Session.createQuery": {
+      "calls": [],
+      "called_by": [
+        "LocationEncounterTypeMapDaoImpl.getEncounterTypes",
+        "EntityMappingDaoImpl.getMappingsOfEntity",
+        "EntityMappingDaoImpl.getAllEntityMappings",
+        "EntityMappingDaoImpl.getEntityMappingTypeByName"
+      ]
+    },
+    "EntityMappingDaoImpl.getMappingsOfEntity": {
+      "calls": [
+        {
+          "target": "sessionFactory.getCurrentSession",
+          "object": "sessionFactory",
+          "method": "getCurrentSession",
+          "type": "instance_call"
+        },
+        {
+          "target": "currentSession.createQuery",
+          "object": "currentSession",
+          "method": "createQuery",
+          "type": "instance_call"
+        },
+        {
+          "target": "query.setParameter",
+          "object": "query",
+          "method": "setParameter",
+          "type": "instance_call"
+        },
+        {
+          "target": "query.setParameter",
+          "object": "query",
+          "method": "setParameter",
+          "type": "instance_call"
+        },
+        {
+          "target": "query.list",
+          "object": "query",
+          "method": "list",
+          "type": "instance_call"
+        },
+        {
+          "target": "Factory.getCurrentSession",
+          "class": "Factory",
+          "method": "getCurrentSession",
+          "type": "static_call"
+        },
+        {
+          "target": "Session.createQuery",
+          "class": "Session",
+          "method": "createQuery",
+          "type": "static_call"
+        }
+      ],
+      "called_by": []
+    },
+    "EntityMappingDaoImpl.getAllEntityMappings": {
+      "calls": [
+        {
+          "target": "sessionFactory.getCurrentSession",
+          "object": "sessionFactory",
+          "method": "getCurrentSession",
+          "type": "instance_call"
+        },
+        {
+          "target": "currentSession.createQuery",
+          "object": "currentSession",
+          "method": "createQuery",
+          "type": "instance_call"
+        },
+        {
+          "target": "query.setParameter",
+          "object": "query",
+          "method": "setParameter",
+          "type": "instance_call"
+        },
+        {
+          "target": "query.list",
+          "object": "query",
+          "method": "list",
+          "type": "instance_call"
+        },
+        {
+          "target": "Factory.getCurrentSession",
+          "class": "Factory",
+          "method": "getCurrentSession",
+          "type": "static_call"
+        },
+        {
+          "target": "Session.createQuery",
+          "class": "Session",
+          "method": "createQuery",
+          "type": "static_call"
+        }
+      ],
+      "called_by": []
+    },
+    "EntityMappingDaoImpl.getEntityMappingTypeByName": {
+      "calls": [
+        {
+          "target": "sessionFactory.getCurrentSession",
+          "object": "sessionFactory",
+          "method": "getCurrentSession",
+          "type": "instance_call"
+        },
+        {
+          "target": "currentSession.createQuery",
+          "object": "currentSession",
+          "method": "createQuery",
+          "type": "instance_call"
+        },
+        {
+          "target": "query.setParameter",
+          "object": "query",
+          "method": "setParameter",
+          "type": "instance_call"
+        },
+        {
+          "target": "query.list",
+          "object": "query",
+          "method": "list",
+          "type": "instance_call"
+        },
+        {
+          "target": "list.size",
+          "object": "list",
+          "method": "size",
+          "type": "instance_call"
+        },
+        {
+          "target": "list.get",
+          "object": "list",
+          "method": "get",
+          "type": "instance_call"
+        },
+        {
+          "target": "Factory.getCurrentSession",
+          "class": "Factory",
+          "method": "getCurrentSession",
+          "type": "static_call"
+        },
+        {
+          "target": "Session.createQuery",
+          "class": "Session",
+          "method": "createQuery",
+          "type": "static_call"
+        }
+      ],
+      "called_by": []
+    },
+    "list.size": {
+      "calls": [],
+      "called_by": [
+        "EntityMappingDaoImpl.getEntityMappingTypeByName"
+      ]
+    },
+    "list.get": {
+      "calls": [],
+      "called_by": [
+        "EntityMappingDaoImpl.getEntityMappingTypeByName"
+      ]
+    }
+  },
+  "class_dependencies": {
+    "EntityMappingType": [
+      "String",
+      "Integer"
+    ],
+    "LocationEncounterTypeMap": [
+      "Integer",
+      "Location",
+      "EncounterType",
+      "BaseOpenmrsData"
+    ],
+    "EntityMapping": [
+      "EntityMappingType",
+      "String",
+      "Integer"
+    ],
+    "BahmniLocationServiceImpl": [
+      "APIException",
+      "List",
+      "Service",
+      "ArrayList",
+      "StringUtils",
+      "LocationEncounterTypeMapDao",
+      "BahmniLocationService",
+      "Autowired",
+      "EncounterType"
+    ],
+    "LocationEncounterTypeMapDaoImpl": [
+      "Query",
+      "SessionFactory",
+      "List",
+      "Session",
+      "LocationEncounterTypeMapDao",
+      "Autowired",
+      "EncounterType",
+      "Component"
+    ],
+    "EntityMappingDaoImpl": [
+      "Query",
+      "SessionFactory",
+      "List",
+      "EntityMappingType",
+      "Session",
+      "EntityMapping",
+      "EntityMappingDao",
+      "Autowired",
+      "Component"
+    ]
+  },
+  "external_api_calls": [],
+  "database_operations": [
+    {
+      "class": "LocationEncounterTypeMapDaoImpl",
+      "file": "LocationEncounterTypeMapDaoImpl.java",
+      "type": "SELECT",
+      "query": "select et from EncounterType et, Location l, LocationEncounterTypeMap map",
+      "framework": "SQL"
+    },
+    {
+      "class": "LocationEncounterTypeMapDaoImpl",
+      "file": "LocationEncounterTypeMapDaoImpl.java",
+      "type": "CREATEQUERY",
+      "framework": "JPA/Hibernate",
+      "method": "createQuery"
+    },
+    {
+      "class": "EntityMappingDaoImpl",
+      "file": "EntityMappingDaoImpl.java",
+      "type": "SELECT",
+      "query": "select em \" +                         \"from EntityMapping em, EntityMappingType emt",
+      "framework": "SQL"
+    },
+    {
+      "class": "EntityMappingDaoImpl",
+      "file": "EntityMappingDaoImpl.java",
+      "type": "SELECT",
+      "query": "select em \" +                         \"from EntityMapping em, EntityMappingType emt",
+      "framework": "SQL"
+    },
+    {
+      "class": "EntityMappingDaoImpl",
+      "file": "EntityMappingDaoImpl.java",
+      "type": "CREATEQUERY",
+      "framework": "JPA/Hibernate",
+      "method": "createQuery"
+    }
+  ],
+  "scheduled_tasks": [],
+  "spring_components": {
+    "EntityMappingType": "unknown",
+    "LocationEncounterTypeMap": "unknown",
+    "EntityMapping": "unknown",
+    "BahmniLocationServiceImpl": "service",
+    "LocationEncounterTypeMapDaoImpl": "component",
+    "EntityMappingDaoImpl": "component"
+  },
+  "domain_model_usage": {
+    "Encounter": [
+      "LocationEncounterTypeMap",
+      "BahmniLocationServiceImpl",
+      "LocationEncounterTypeMapDaoImpl"
+    ]
+  },
+  "error_handling": [],
+  "configuration_usage": [],
+  "method_complexity": {
+    "EntityMappingType.getId": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMappingType",
+      "method": "getId"
+    },
+    "EntityMappingType.setId": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMappingType",
+      "method": "setId"
+    },
+    "EntityMappingType.getUuid": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMappingType",
+      "method": "getUuid"
+    },
+    "EntityMappingType.setUuid": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMappingType",
+      "method": "setUuid"
+    },
+    "EntityMappingType.getName": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMappingType",
+      "method": "getName"
+    },
+    "EntityMappingType.setName": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMappingType",
+      "method": "setName"
+    },
+    "EntityMappingType.getEntity1Type": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMappingType",
+      "method": "getEntity1Type"
+    },
+    "EntityMappingType.setEntity1Type": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMappingType",
+      "method": "setEntity1Type"
+    },
+    "EntityMappingType.getEntity2Type": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMappingType",
+      "method": "getEntity2Type"
+    },
+    "EntityMappingType.setEntity2Type": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMappingType",
+      "method": "setEntity2Type"
+    },
+    "LocationEncounterTypeMap.getId": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "LocationEncounterTypeMap",
+      "method": "getId"
+    },
+    "LocationEncounterTypeMap.setId": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "LocationEncounterTypeMap",
+      "method": "setId"
+    },
+    "LocationEncounterTypeMap.getEncounterType": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "LocationEncounterTypeMap",
+      "method": "getEncounterType"
+    },
+    "LocationEncounterTypeMap.setEncounterType": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "LocationEncounterTypeMap",
+      "method": "setEncounterType"
+    },
+    "LocationEncounterTypeMap.getLocation": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "LocationEncounterTypeMap",
+      "method": "getLocation"
+    },
+    "LocationEncounterTypeMap.setLocation": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "LocationEncounterTypeMap",
+      "method": "setLocation"
+    },
+    "EntityMapping.getId": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMapping",
+      "method": "getId"
+    },
+    "EntityMapping.setId": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMapping",
+      "method": "setId"
+    },
+    "EntityMapping.getUuid": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMapping",
+      "method": "getUuid"
+    },
+    "EntityMapping.setUuid": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMapping",
+      "method": "setUuid"
+    },
+    "EntityMapping.getEntity1Uuid": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMapping",
+      "method": "getEntity1Uuid"
+    },
+    "EntityMapping.setEntity1Uuid": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMapping",
+      "method": "setEntity1Uuid"
+    },
+    "EntityMapping.getEntity2Uuid": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMapping",
+      "method": "getEntity2Uuid"
+    },
+    "EntityMapping.setEntity2Uuid": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMapping",
+      "method": "setEntity2Uuid"
+    },
+    "EntityMapping.getEntityMappingType": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMapping",
+      "method": "getEntityMappingType"
+    },
+    "EntityMapping.setEntityMappingType": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMapping",
+      "method": "setEntityMappingType"
+    },
+    "BahmniLocationServiceImpl.getEncounterTypes": {
+      "complexity": 2,
+      "risk": "low",
+      "class": "BahmniLocationServiceImpl",
+      "method": "getEncounterTypes"
+    },
+    "BahmniLocationServiceImpl.getEncounterType": {
+      "complexity": 4,
+      "risk": "low",
+      "class": "BahmniLocationServiceImpl",
+      "method": "getEncounterType"
+    },
+    "LocationEncounterTypeMapDaoImpl.getEncounterTypes": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "LocationEncounterTypeMapDaoImpl",
+      "method": "getEncounterTypes"
+    },
+    "EntityMappingDaoImpl.getMappingsOfEntity": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMappingDaoImpl",
+      "method": "getMappingsOfEntity"
+    },
+    "EntityMappingDaoImpl.getAllEntityMappings": {
+      "complexity": 1,
+      "risk": "low",
+      "class": "EntityMappingDaoImpl",
+      "method": "getAllEntityMappings"
+    },
+    "EntityMappingDaoImpl.getEntityMappingTypeByName": {
+      "complexity": 2,
+      "risk": "low",
+      "class": "EntityMappingDaoImpl",
+      "method": "getEntityMappingTypeByName"
+    }
+  },
+  "database_schema_mapping": {
+    "EncounterType": {
+      "dao": [
+        "LocationEncounterTypeMapDaoImpl"
+      ],
+      "service": []
+    },
+    "EntityMappingType": {
+      "dao": [
+        "EntityMappingDaoImpl"
+      ],
+      "service": []
+    },
+    "EntityMapping": {
+      "dao": [
+        "EntityMappingDaoImpl"
+      ],
+      "service": []
+    }
+  },
+  "api_endpoints": [],
+  "domain_clusters": {
+    "Clinical": [
+      {
+        "class": "LocationEncounterTypeMap",
+        "type": "unknown"
+      },
+      {
+        "class": "LocationEncounterTypeMapDaoImpl",
+        "type": "component"
+      }
+    ]
+  },
+  "class_to_file_mapping": {
+    "EntityMappingType": "/Users/home/Desktop/p/bahmni-mapping/src/main/java/org/openmrs/module/bahmnimapping/model/EntityMappingType.java",
+    "LocationEncounterTypeMap": "/Users/home/Desktop/p/bahmni-mapping/src/main/java/org/openmrs/module/bahmnimapping/model/LocationEncounterTypeMap.java",
+    "EntityMapping": "/Users/home/Desktop/p/bahmni-mapping/src/main/java/org/openmrs/module/bahmnimapping/model/EntityMapping.java",
+    "BahmniLocationServiceImpl": "/Users/home/Desktop/p/bahmni-mapping/src/main/java/org/openmrs/module/bahmnimapping/services/impl/BahmniLocationServiceImpl.java",
+    "LocationEncounterTypeMapDaoImpl": "/Users/home/Desktop/p/bahmni-mapping/src/main/java/org/openmrs/module/bahmnimapping/dao/impl/LocationEncounterTypeMapDaoImpl.java",
+    "EntityMappingDaoImpl": "/Users/home/Desktop/p/bahmni-mapping/src/main/java/org/openmrs/module/bahmnimapping/dao/impl/EntityMappingDaoImpl.java"
+  }
+}
