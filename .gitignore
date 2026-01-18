@@ -2,54 +2,37 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.so
-.Python
+
+# Minimal .gitignore for this project
+
+# Python cache and builds
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments and env files
 venv/
-env/
-ENV/
-.venv
+.venv/
+.env
 
-# Data directories
-data/
-*.db
-*.sqlite
-
-# Model files (except placeholder)
-models/*.gguf
-models/*.bin
-!models/llm_model.bin
-
-# Neo4j
-.neo4j/
-
-# LanceDB
-*.lance
+# Generated embeddings / DBs (can be recreated)
+platform/3.embedder/vector DB/
+platform/2.chunker/chunk_Data/
 
 # IDE
 .vscode/
 .idea/
-*.swp
-*.swo
-*~
 
 # OS
 .DS_Store
-Thumbs.db
 
-# Distribution
+# Logs and build outputs
+*.log
 dist/
 build/
-*.egg-info/
-
-# Logs
-*.log
 
 # Jupyter
 .ipynb_checkpoints/
 
 # pytest
 .pytest_cache/
-.coverage
-htmlcov/
-
-# Environment files
-.env

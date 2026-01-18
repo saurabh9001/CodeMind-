@@ -27,8 +27,8 @@ console = Console()
 # ============================================================================
 # CONFIGURATION - Change these paths as needed
 # ============================================================================
-DEFAULT_REPO_PATH = "/Users/home/Desktop/p/project"
-DEFAULT_OUTPUT_FILE = "/Users/home/Desktop/p/platform/1.parser/output parser/f.json"
+DEFAULT_REPO_PATH = "/Users/home/Desktop/CODEMIND/project"
+DEFAULT_OUTPUT_FILE = "/Users/home/Desktop/CODEMIND/platform/1.parser/output parser/f.json"
 # ============================================================================
 
 # Simple parsed file structure
@@ -983,20 +983,7 @@ def main(repo_path=None, output_file=None):
         f"  • {len([m for m, c in analyzer.method_complexity.items() if c['risk'] in ['high', 'very_high']])} high-risk methods\n"
         f"  • {len(analyzer.database_schema_mapping)} database tables mapped\n"
         f"  • {len(analyzer.api_endpoints)} REST API endpoints\n"
-        f"  • {len(analyzer.domain_clusters)} domain clusters\n\n"
-        f"[yellow]NOW YOU CAN ANSWER:[/yellow]\n"
-        f"  ✓ 'What breaks if I change method X?'\n"
-        f"  ✓ 'Which classes depend on ServiceA?'\n"
-        f"  ✓ 'Where are external APIs called?'\n"
-        f"  ✓ 'Which methods query the database?'\n"
-        f"  ✓ 'Which task triggers this worker?'\n"
-        f"  ✓ 'What models does this service use?'\n"
-        f"  ✓ 'Where is error handling implemented?'\n"
-        f"  ✓ 'Which classes read config properties?'\n"
-        f"  ✓ 'Which methods are risky to change?' (complexity)\n"
-        f"  ✓ 'Which tables are accessed by which services?'\n"
-        f"  ✓ 'What REST endpoints exist?'\n"
-        f"  ✓ 'What are the bounded contexts?'",
+        f"  • {len(analyzer.domain_clusters)} domain clusters\n\n"  ,
         style="green",
         title="Complete Analysis"
     ))

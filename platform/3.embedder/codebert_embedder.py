@@ -153,8 +153,8 @@ def main():
     """Standalone usage"""
     import sys
     
-    chunks_file = sys.argv[1] if len(sys.argv) > 1 else "/Users/home/Desktop/p/platform/2.chunker/chunk_Data/chunk"
-    output_dir = sys.argv[2] if len(sys.argv) > 2 else "/Users/home/Desktop/p/platform/3.embedder/vector DB"
+    chunks_file = sys.argv[1] if len(sys.argv) > 1 else "/Users/home/Desktop/CODEMIND/platform/2.chunker/chunk_Data/chunk"
+    output_dir = sys.argv[2] if len(sys.argv) > 2 else "/Users/home/Desktop/CODEMIND/platform/3.embedder/vector DB"
     use_openai = sys.argv[3] == "openai" if len(sys.argv) > 3 else True  # Default to OpenAI to avoid segfaults
     
     print("Code-Aware Embedder")

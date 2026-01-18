@@ -264,8 +264,8 @@ def _extract_keywords(method_name: str, description_parts: List[str], calls: Lis
 if __name__ == "__main__":
     import sys
     
-    analysis_file = sys.argv[1] if len(sys.argv) > 1 else "/Users/home/Desktop/p/platform/1.parser/output parser/f.json"
-    output_file = sys.argv[2] if len(sys.argv) > 2 else "/Users/home/Desktop/p/platform/2.chunker/chunk_Data/chunk"
+    analysis_file = sys.argv[1] if len(sys.argv) > 1 else "/Users/home/Desktop/CODEMIND/platform/1.parser/output parser/f.json"
+    output_file = sys.argv[2] if len(sys.argv) > 2 else "/Users/home/Desktop/CODEMIND/platform/2.chunker/chunk_Data/chunk"
     
     chunks = create_enriched_chunks(analysis_file, output_file)
     
