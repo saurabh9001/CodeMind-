@@ -8,20 +8,19 @@ import numpy as np
 import openai
 from pathlib import Path
 from dotenv import load_dotenv
-from sentence_transformers import SentenceTransformer
 
 
 # Load environment
-REPO_ROOT = Path(__file__).parent.parent
+REPO_ROOT = Path(__file__).parent.parent.parent
 load_dotenv(dotenv_path=REPO_ROOT / ".env")
 
 
-def load_index_and_metadata(index_path="vector_db_v2/code_index.faiss", metadata_path="vector_db_v2/metadata.npy"):
+def load_index_and_metadata(index_path="3.embedder/vector DB/code_index.faiss", metadata_path="3.embedder/vector DB/metadata.npy"):
     """Load FAISS index and enriched metadata"""
     base_dir = REPO_ROOT
     
-    index = faiss.read_index(str(base_dir / index_path))
-    metadata = np.load(str(base_dir / metadata_path), allow_pickle=True)
+    index = faiss.read_index(str(base_dir / "platform" / index_path))
+    metadata = np.load(str(base_dir / "platform" / metadata_path), allow_pickle=True)
     
     print(f"✓ Loaded FAISS index: {index.ntotal} vectors (dimension={index.d})")
     print(f"✓ Loaded metadata: {len(metadata)} enriched chunks")

@@ -27,8 +27,8 @@ console = Console()
 # ============================================================================
 # CONFIGURATION - Change these paths as needed
 # ============================================================================
-DEFAULT_REPO_PATH = "/Users/home/Desktop/p/bahmnicore-api/src/main/java/org/bahmni/module/bahmnicore"
-DEFAULT_OUTPUT_FILE = "/Users/home/Desktop/p/COMPLETE_DEEP_ANALYSIS.json"
+DEFAULT_REPO_PATH = "/Users/home/Desktop/p/project"
+DEFAULT_OUTPUT_FILE = "/Users/home/Desktop/p/platform/1.parser/output parser/f.json"
 # ============================================================================
 
 # Simple parsed file structure
