@@ -1,5 +1,4 @@
 """
-Code-Aware Embedder using GraphCodeBERT
 Understands code semantics, data flow, and relationships
 """
 import json

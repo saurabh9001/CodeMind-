@@ -1,5 +1,5 @@
 """
-Metadata-Enriched Chunker - Creates rich chunks from COMPLETE_DEEP_ANALYSIS.json
+Metadata-Enriched Chunker - Creates rich chunks from COMPLETE_DEEP_ANALYSIS
 Works without source code by leveraging comprehensive analysis metadata
 """
 import json
