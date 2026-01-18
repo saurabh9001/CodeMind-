@@ -1,10 +1,20 @@
-# Minimal requirements for analyze_sample.py
+# Code Intelligence & Modernization RAG Platform
+# Core dependencies for analysis, chunking, embedding, and QA
 
-# Code parsing
+# Code parsing (AST-based analysis)
 tree-sitter>=0.21.3
 tree-sitter-java>=0.21.0
 tree-sitter-python>=0.23.0
 tree-sitter-typescript>=0.21.0
+
+# Vector database and embeddings
+faiss-cpu>=1.7.4
+sentence-transformers>=2.2.2
+numpy>=1.24.0
+
+# LLM integration
+openai>=1.0.0
+python-dotenv>=1.0.0
 
 # Terminal UI
 rich>=13.7.0
@@ -13,3 +23,11 @@ tqdm>=4.66.1
 # Data handling
 pydantic>=2.5.3
 pathspec>=0.12.1
+
+# Optional: Local code-aware embeddings (GraphCodeBERT)
+# Uncomment if using local embeddings instead of OpenAI API
+# transformers>=4.30.0
+# torch>=2.0.0
+
+# Optional: Hybrid search
+# rank-bm25>=0.2.2
