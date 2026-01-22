@@ -114,21 +114,38 @@ Metadata:
     
     context = "\n".join(context_parts)
     
-    prompt = f"""You are a code analysis assistant. Answer the user's question about this Java codebase.
+    prompt = f"""You are an expert Java code analyst. Answer the question using ONLY the provided code context.
 
-Context (Top {len(results)} most relevant code methods):
+Retrieved Code Context:
 {context}
 
-User Question: {query}
+Question: {query}
 
-Instructions:
-- Provide a clear, technical answer based on the retrieved code context
-- Reference specific methods, classes, and relationships
-- If describing logic, explain the call flow and dependencies
-- If the context doesn't fully answer the question, state what's available and what's missing
-- Use the metadata (complexity, DB ops, error handling) to provide deeper insights
+CRITICAL RULES:
+1. Keep answer to 2-4 sentences maximum
+2. Start with the main answer immediately - NO introductions like "Based on the code..." or "The retrieved context shows..."
+3. Use this exact format:
 
-Answer:"""
+**Answer:**
+[Direct answer in 1-2 sentences]
+
+**Location:**
+- File: `[exact file path]`
+- Method: `[ClassName.methodName]`
+
+**Technical Details:**
+- [Key point 1]
+- [Key point 2]
+- [Only if relevant: complexity/risk/DB operations]
+
+IMPORTANT:
+- Be extremely concise and technical
+- Reference methods/classes in backticks
+- Include exact file paths
+- Skip obvious information
+- If context is insufficient, state it briefly
+
+Your response:"""
     
     return prompt
 
@@ -154,11 +171,11 @@ def call_openai(prompt):
         response = client.chat.completions.create(
             model=model,
             messages=[
-                {"role": "system", "content": "You are a helpful code analysis assistant specialized in Java Spring applications."},
+                {"role": "system", "content": "You are a precise code analyst. Give SHORT, structured answers. Use the exact format requested. NO fluff, NO introductions. Start directly with the answer. Use backticks for code elements. Maximum 4 sentences."},
                 {"role": "user", "content": prompt}
             ],
-            max_tokens=800,
-            temperature=0.3
+            max_tokens=500,
+            temperature=0.1
         )
         
         return response.choices[0].message.content
@@ -206,6 +223,7 @@ def interactive_loop():
         for r in results:
             chunk = r['chunk']
             print(f"  {r['rank']}. {chunk['id']} (distance={r['distance']:.4f})")
+            print(f"     📁 {chunk.get('file_path', 'unknown')}")
             print(f"     {chunk.get('spring_component_type', 'unknown')} | complexity={chunk.get('complexity', 0)} | {len(chunk.get('calls', []))} calls")
         
         # Build prompt
