@@ -167,7 +167,11 @@ CodeMind/
 │   │       └── metadata.npy               # Chunk metadata (generated)
 │   │
 │   └── 4.retriever/                       # QA & Retrieval
-│       └── query_qa_v2.py                 # Interactive QA system
+│       ├── query_qa_v2.py                 # Interactive CLI QA system
+│       ├── new_streamli.py                # Streamlit UI for code search
+│       ├── retriever_raw.py               # Backend retrieval logic
+│       ├── streamlit_app_v2.py            # Alternative Streamlit interface
+│       └── demo_prompt.py                 # Prompt engineering examples
 │
 └── project/                               # Sample project to analyze
     └── openmrs-client-omod/               # OpenMRS OMOD module
@@ -305,13 +309,32 @@ python codebert_embedder.py \
 
 Start the interactive QA system:
 
+**Option A: CLI Interface** (Terminal-based)
+
 ```bash
 # Navigate to retriever directory
 cd ../4.retriever
 
-# Launch interactive QA
+# Launch interactive CLI QA
 python query_qa_v2.py
 ```
+
+**Option B: Streamlit UI** (Web-based, Recommended)
+
+```bash
+# Navigate to retriever directory
+cd ../4.retriever
+
+# Launch Streamlit web interface
+streamlit run new_streamli.py
+```
+
+The Streamlit UI provides:
+- 🔍 Interactive search interface with real-time results
+- 📄 Source code preview with syntax highlighting  
+- 📊 Detailed metadata display (complexity, dependencies, call graphs)
+- 💾 Copy-to-clipboard functionality for code snippets
+- 🎨 Rich formatting for better readability
 
 **Example queries**:
 ```
@@ -320,7 +343,15 @@ python query_qa_v2.py
 > Which methods handle database transactions?
 > Show me all scheduled tasks in the codebase
 > What error handling patterns are used?
+> Show the source code of the Privilege class
+> Find all Spring Service components with database operations
 ```
+
+**Streamlit UI Features**:
+- 🎯 **Quick View Tab**: Overview of retrieved methods with key metadata
+- 📝 **Detailed Analysis Tab**: Full source code with annotations and complexity metrics
+- 🔍 **Search Filters**: Filter by complexity, risk level, or component type
+- 📋 **Code Copy**: One-click copy of source code for downstream use (ChatGPT, etc.)
 
 ---
 
@@ -423,9 +454,15 @@ python metadata_enriched_chunker.py <input_json> <output_chunks>
 - `code_index.faiss` — FAISS L2 index
 - `metadata.npy` — NumPy array of chunk metadata
 
-### 4. Retriever (`query_qa_v2.py`)
+### 4. Retriever (`query_qa_v2.py`, `new_streamli.py`)
 
-**Purpose**: Interactive QA system with RAG
+**Purpose**: Interactive QA system with RAG (Retrieval-Augmented Generation)
+
+**Components**:
+
+1. **CLI Interface** (`query_qa_v2.py`) — Terminal-based interactive queries
+2. **Streamlit UI** (`new_streamli.py`) — Modern web interface with rich formatting
+3. **Backend** (`retriever_raw.py`) — Core retrieval and formatting logic
 
 **Features**:
 - Natural language query embedding
@@ -433,21 +470,39 @@ python metadata_enriched_chunker.py <input_json> <output_chunks>
 - Context-aware prompt construction
 - LLM-powered answer generation
 - Rich metadata display
+- **NEW**: Source code preview in results
+- **NEW**: Copy-to-clipboard functionality
+- **NEW**: Syntax highlighting and formatting
+
+**Usage**:
+
+**CLI Mode**:
+```bash
+python query_qa_v2.py
+> Enter your query: What does the AccessionDiff class do?
+```
+
+**Streamlit UI Mode** (Recommended):
+```bash
+streamlit run new_streamli.py
+# Opens browser at http://localhost:8501
+```
 
 **Configuration**:
 ```python
-# In query_qa_v2.py
+# In query_qa_v2.py or new_streamli.py
 k = 5  # Number of chunks to retrieve
 model = "gpt-4"  # Or "gpt-3.5-turbo"
 ```
 
 **Query Flow**:
-1. User enters natural language query
+1. User enters natural language query (CLI or web UI)
 2. Query is embedded using same model as chunks
 3. FAISS retrieves top-k similar chunks
-4. Context is built from retrieved chunks + metadata
+4. Context is built from retrieved chunks + metadata + **source code**
 5. LLM generates answer based on context
-6. Answer displayed with source references
+6. Answer displayed with source references and **code preview**
+7. **NEW**: Users can copy source code directly from UI
 
 ---
 
